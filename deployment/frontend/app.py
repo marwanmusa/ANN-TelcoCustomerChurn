@@ -18,17 +18,17 @@ st.set_page_config(
     }
 )
 
-col1, col2, col3 = st.columns([2.5, 10, 1])
+col1, col2, col3 = st.columns([2.5, 7.5, 2.5])
 with col2:
     image = Image.open('logo.png')
-    st.image(image, width=800)
+    st.image(image, use_column_width=True, width=800)
 
 st.markdown(" --- ")
 col1, col2 = st.columns(spec = 2)
 with col1:
 
     image = Image.open('demographic.png')
-    st.image(image, width=400)
+    st.image(image, use_column_width=True, width=300)
 
 
 with col2:
@@ -79,18 +79,10 @@ with cola:
     st.markdown(" ")
     st.markdown(" ")
     st.markdown(" ")
-    st.markdown(" ")
-    st.markdown(" ")
-    st.markdown(" ")
-    st.markdown(" ")
-    st.markdown(" ")
-    st.markdown(" ")
-    st.markdown(" ")
-    st.markdown(" ")
-    st.markdown(" ")
-    st.markdown(" ")
+
+
     image = Image.open('services.png')
-    st.image(image, width=400)
+    st.image(image, use_column_width=True, width=400)
 
 with colb:
     with st.container():
@@ -178,13 +170,12 @@ col1, col2, col3 = st.columns([1, 10, 1])
 with col2:
     st.write(data_)
     
-    st.markdown("")    
-    click_ = st.checkbox('Predict')
+    submitted = st.button("Submit Data")
 
-    if click_:
-        for res in response['predictions'][0]:
-            if res > 0.5:
-                st.title("Leave")
-            else:
-                st.title("Stay")
+    if submitted:
+            for res in response['predictions'][0]:
+                if res > 0.5:
+                    st.title("The Customer will leave")
+                else:
+                    st.title("The Customer will stay")
 
