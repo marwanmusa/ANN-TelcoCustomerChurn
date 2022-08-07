@@ -8,13 +8,13 @@ import sklearn
 
 st.set_page_config(
     page_title="Churn Prediction",
-    page_icon="💻",
+    page_icon="📋",
     initial_sidebar_state="collapsed",
     layout = "wide",
     menu_items={
         'Get Help': 'https://www.google.com/',
         'Report a bug': "https://github.com/marwanmusa",
-        'About': "# Milestone 1 - Churn Prediction Application"
+        'About': "# Churn Prediction Application"
     }
 )
 
